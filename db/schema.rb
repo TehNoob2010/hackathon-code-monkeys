@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_11_053114) do
+ActiveRecord::Schema.define(version: 2018_08_11_141054) do
 
   create_table "chat_sessions", force: :cascade do |t|
     t.integer "student_id"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 2018_08_11_053114) do
     t.float "rating"
     t.integer "rating_count"
     t.string "linkedin_ID"
-    t.string "skype_ID"
     t.integer "user_id"
     t.string "status"
     t.datetime "created_at", null: false

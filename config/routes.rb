@@ -6,11 +6,20 @@ Rails.application.routes.draw do
         resources :students
         resources :tutors
         #get '/tutors/:id/update_rate/:tutor_rate/:course_rate', to: 'tutors#update_rate'
-        get '/students/:id/update_rate/:rating', to: 'students#update_rate'
-        scope '/tutors/:id' do 
+        # get '/students/:id/update_rate/:rating', to: 'students#update_rate'
+
+        scope '/tutors/:id' do
             get '/rate', to: 'tutors#update_rate'
         end
+
+        scope '/student/:id' do
+            get '/rate', to: 'student#update_rate'
+        end
+
+        # queryParams must contain ?course_name=""&student_id=""
+        get '/start_session', to: 'chat_sessions#create'
+
     end
-    
-    
+
+
 end

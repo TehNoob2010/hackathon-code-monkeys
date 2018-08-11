@@ -34,7 +34,19 @@ Course.create(
       name: "history", score: 22, rating: 3.5, rating_count: 1, tutor_id: 1
     },
     {
+      name: "history", score: 80, rating: 3.5, rating_count: 1, tutor_id: 3
+    },
+    {
       name: "history", score: 55, rating: 3.5, rating_count: 1, tutor_id: 2
+    },
+    {
+      name: "math", score: 89, rating: 3.5, rating_count: 1, tutor_id: 5
+    },
+    {
+      name: "math", score: 60, rating: 3.5, rating_count: 1, tutor_id: 3
+    },
+    {
+      name: "math", score: 44, rating: 3.5, rating_count: 1, tutor_id: 4
     }
   ]
 )
