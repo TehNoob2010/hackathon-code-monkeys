@@ -24,6 +24,10 @@ body{
 
 footer{
     background-color: whitesmoke;
+    position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
 }
 
 footer p{
@@ -122,6 +126,7 @@ button:hover span:after {
     top: 30%;
     text-align: center;
     padding: 20px;
+    background-color: limegreen; 
 }
 
 .loader {
@@ -155,7 +160,7 @@ button:hover span:after {
  content: '';
 }
 .loader:after {
- background: #0dc5c1;
+ background-color: limegreen;
  width: 75%;
  height: 75%;
  border-radius: 50%;
@@ -201,20 +206,55 @@ button:hover span:after {
       padding: 80px ;
   }
 
-  .btn-primary{
+ #bigButn{
     border-radius: 70%;
-    padding: 100px 90px;
-   animation: engine 1s ease-in;
+    padding: 20px;
+    box-shadow: 5px 10px 25px 5px rgba(0,0,0,0.3);
     background-color: limegreen;
-    margin: 0 auto;
-    text-align: center;
-    margin-right: 50%;
+    margin-left: 35%;
+    margin-top: 15%;
+    width: 20vw;
+    height: 20vw;
 }
 
+#ButnCont #btnText{
+    text-align: center !important;
+    font-size: 2em;
+}
 #exampleModalLabel{
     text-align: center;
 }
 
+#tutHead{
+    text-align: center;
+}
 .modal-body{
     text-align: center;
+}
+
+#ButnCont{
+    
+    margin: 0 auto;
+    
+}
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.5); }
+
+@keyframes pulse_animation {
+    0% { transform: scale(1); }
+    30% { transform: scale(1); }
+    40% { transform: scale(1.08); }
+    50% { transform: scale(1); }
+    60% { transform: scale(1); }
+    70% { transform: scale(1.05); }
+    80% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation-name: pulse_animation;
+    animation-duration: 3000ms;
+    transform-origin:70% 70%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
