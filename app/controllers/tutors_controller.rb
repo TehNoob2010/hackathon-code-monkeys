@@ -1,13 +1,13 @@
 class TutorsController < ApplicationController
     def index
-      render json: Tutor.all
+      @tutor = Tutor.all
+      render json: @tutor
     end
 
     def show
-      @tutor = Tutor.find(params[:id])
-      @user = User.find(@tutor.user_id)
-      @both = @tutor.merge(@user)
-      render json: @both
+      tutor = Tutor.find(params[:id])
+      user = User.find(tutor.user_id)
+      render :json => {:user => user, :tutor => tutor }
     end
 
     def create
