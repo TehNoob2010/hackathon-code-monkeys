@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2018_08_11_053114) do
   create_table "tutors", force: :cascade do |t|
     t.float "rating"
     t.integer "rating_count"
+    t.string "linked_in"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 2018_08_11_053114) do
     t.string "password"
     t.string "s_number"
     t.string "gender"
+    t.string "skype_user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
