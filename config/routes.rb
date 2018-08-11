@@ -5,7 +5,11 @@ Rails.application.routes.draw do
         resources :courses
         resources :students
         resources :tutors
-        get '/tutors/:id/update_rate/:rating', to: 'tutors#update_rate'
+        #get '/tutors/:id/update_rate/:tutor_rate/:course_rate', to: 'tutors#update_rate'
+        get '/students/:id/update_rate/:rating', to: 'students#update_rate'
+        scope '/tutors/:id' do 
+            get '/rate', to: 'tutors#update_rate'
+        end
     end
     
     

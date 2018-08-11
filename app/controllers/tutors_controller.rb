@@ -16,15 +16,23 @@ class TutorsController < ApplicationController
     def update_rate
             #if params[:update_rate].present? 
             tutor = Tutor.find(params[:id])
-            rating = rate(params[:rating].to_f, params[:id])
+            t_rating = rate(params[:tutor_rate].to_f, tutor.id)
             t_count = tutor.rating_count + 1
-            Tutor.update(tutor.id, :rating => rating, :rating_count => t_count)
+            Tutor.update(tutor.id, :rating => t_rating, :rating_count => t_count)
+        
+            course = Course.find(params[:course_id])
+            c_rating = course_rate(params[:course_rate].to_f, tutor.id)
+            c_count = course.rating_count + 1
+        
+            Course.update(course.id, :rating => c_rating, :rating_count => t_count)
+            render :json => {:done => "true"}
     end
     
 
     def create
         user = User.find(params[:user_id])
         tutor = Tutor.create({user_id: @user.id, rating: 3.5, rating_count: 1})
+        
     end
     
     
@@ -33,6 +41,13 @@ class TutorsController < ApplicationController
         t_rating = Tutor.find(id).rating
         t_count =  Tutor.find(id).rating_count
         rating = ((t_rating * t_count) + new_rate) / (t_count + 1)
+        rating
+    end
+    
+    def course_rate(new_rate, id)
+        c_rating = Course.find_by(tutor_id:id).rating
+        c_count =  Course.find_by(tutor_id:id).rating_count
+        rating = ((c_rating * c_count) + new_rate) / (c_count + 1)
         rating
     end
 
