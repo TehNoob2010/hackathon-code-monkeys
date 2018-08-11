@@ -116,7 +116,7 @@ Course.create(
       name: "physics", score: 89, rating: 3.5, rating_count: 1, tutor_id: 2
     },
     {
-      name: "history", score: 93, rating: 3.5, rating_count: 1, tutor_id: 3
+      name: "math", score: 100, rating: 4.8, rating_count: 25, tutor_id: 3
     },
     {
       name: "math", score: 44, rating: 3.5, rating_count: 1, tutor_id: 3

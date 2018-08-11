@@ -2,7 +2,7 @@ class ChatSessionsController < ApplicationController
   def new
     @chat_session = ChatSession.new
   end
-    
+
     def index
         chat = ChatSession.all
         render json: chat
@@ -29,12 +29,12 @@ class ChatSessionsController < ApplicationController
       :tutor => {
         :user => tutor_user,
         :tutor => tutor
-        },
+      },
       :student => {
         :user => student_user,
         :student => student
       },
-        :course_id => course_id
+      :course_id => course_id
     }, :callback => params[:callback]
   end
 
@@ -47,7 +47,7 @@ class ChatSessionsController < ApplicationController
     course = Course.all.where(name: course_name).order(:score).reverse_order.first
     Tutor.find(course.tutor_id)
   end
-    
+
     def find_id(course_name)
         course_id = Course.all.where(name: course_name).order(:score).reverse_order.first.id
     end
