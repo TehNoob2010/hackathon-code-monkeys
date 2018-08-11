@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-    namespace :api, defaults: {format: 'json'} do
+    scope '/api' do
         resources :users
         resources :courses
+        resources :students
+        resources :tutors
+
     end
-
-    resources :users
-
-
 end
