@@ -6,7 +6,8 @@ for i in 1..20 do
     [
       {
         name: 'Student_' + "#{i}", email: 's000000' + "#{i}" \
-        + '@student.rmit.edu.au', s_number: 's000000' + "#{i}", gender: 'x'
+        + '@student.rmit.edu.au', s_number: 's000000' + "#{i}", gender: 'x', \
+        skype_user: "skype" + "#{i}",
       }
     ]
   )
@@ -14,7 +15,8 @@ for i in 1..20 do
   Tutor.create(
     [
       {
-        rating: default_rating, rating_count: 1, user_id: "#{i}"
+        rating: default_rating, rating_count: 1, user_id: "#{i}", \
+          linkedin_ID: "linked" + "#{i}"
       }
     ]
   ) if i < 11
@@ -22,7 +24,7 @@ for i in 1..20 do
   Student.create(
     [
       {
-        rating: default_rating, rating_count: 1, user_id: "#{i}"
+        rating: default_rating, rating_count: 1, user_id: "#{i}",
       }
     ]
   )
