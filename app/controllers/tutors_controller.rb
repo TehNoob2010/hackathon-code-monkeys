@@ -19,6 +19,7 @@ class TutorsController < ApplicationController
             rating = rate(params[:rating].to_f, params[:id])
             t_count = tutor.rating_count + 1
             Tutor.update(tutor.id, :rating => rating, :rating_count => t_count)
+            render :json => {:done => "true"}
     end
     
 
