@@ -28,7 +28,7 @@ class ChatSessionsController < ApplicationController
         :user => student_user,
         :student => student
       }
-    }
+    }, :callback => params[:callback]
   end
 
   def end_chat(chat_session_id)

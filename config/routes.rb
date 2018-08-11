@@ -17,7 +17,8 @@ Rails.application.routes.draw do
         end
 
         # queryParams must contain ?course_name=""&student_id=""
-        get '/start_session', to: 'chat_sessions#create'
+        get '/create_session', to: 'chat_sessions#create'
+        post '/create_session', to: 'chat_sessions#create'
 
     end
 
