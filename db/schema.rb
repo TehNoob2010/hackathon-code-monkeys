@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_11_045343) do
+ActiveRecord::Schema.define(version: 2018_08_11_053114) do
+
+  create_table "chat_sessions", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "tutor_id"
+    t.datetime "started_at"
+    t.datetime "ended_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_chat_sessions_on_student_id"
+    t.index ["tutor_id"], name: "index_chat_sessions_on_tutor_id"
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
@@ -24,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_08_11_045343) do
 
   create_table "students", force: :cascade do |t|
     t.float "rating"
+    t.integer "rating_count"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_08_11_045343) do
 
   create_table "tutors", force: :cascade do |t|
     t.float "rating"
+    t.integer "rating_count"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
