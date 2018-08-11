@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         # get '/students/:id/update_rate/:rating', to: 'students#update_rate'
 
         post '/user', to: 'users#create'
+        post '/tutor', to: 'tutors#create'
 
         scope '/tutors/:id' do
             get '/rate', to: 'tutors#update_rate'
