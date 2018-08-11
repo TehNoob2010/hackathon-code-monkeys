@@ -6,7 +6,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password
       t.string :s_number
       t.string :gender
-      
+      t.string :skype_user
+
       t.timestamps
     end
   end
