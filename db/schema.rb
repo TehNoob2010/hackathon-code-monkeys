@@ -46,8 +46,10 @@ ActiveRecord::Schema.define(version: 2018_08_11_053114) do
   create_table "tutors", force: :cascade do |t|
     t.float "rating"
     t.integer "rating_count"
-    t.string "linked_in"
+    t.string "linkedin_ID"
+    t.string "skype_ID"
     t.integer "user_id"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_tutors_on_user_id"
