@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_08_11_053114) do
     t.string "name"
     t.integer "score"
     t.float "rating"
+    t.integer "rating_count"
     t.integer "tutor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
