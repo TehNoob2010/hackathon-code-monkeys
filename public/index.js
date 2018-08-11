@@ -9,11 +9,8 @@
 $(function(){
 	$('#search').click(()=>{
 	    let popUp = "<div class='popup'><h2>Searching for your tutor</h2><div class='loader'>Loading...</div></div>";
-	    $('#contentWrapper').append(popUp);
+		$('#contentWrapper').append(popUp);
 	});
 
-	$("#search").click(function(event) {
-		/* Act on the event */
-	});
 });
 
