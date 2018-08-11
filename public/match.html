@@ -12,16 +12,20 @@
 
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
 </head>
 
 <body>
 	<div class="container">
 		<h4 class="bg-success" align="center">Matching successfully !</h4>
 		<p align="center">Click here to get into the world where student and tutor are connected !</p>
-		<button class="btn btn-primary"><span>Skype </span></button>
-		<p margin-top="10px" align="center">Ending your session before levaving. Thanks ^^ !</p>
+		<button id="btnSkype" class="skype-button btn btn-primary" 	data-contact-id="user_name"><span>Skype </span></button>
+		<p align="center">Ending your session before levaving. Thanks ^^ !</p>
 		<button class="btn btn-warning"><span>Exit </span></button>
+
+		<div class="skype-chat" data-css-url="css.css"></div>
 	</div>
+
 
 </body>
 </html>
