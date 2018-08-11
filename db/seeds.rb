@@ -8,7 +8,25 @@
 
 for i in 1..20 do
   User.create(
-    { name: 'Student_' + "#{i}", email: 's000000' + "#{i}" \
-      + '@student.rmit.edu.au', s_number: 's000000' + "#{i}", gender: 'x' }
+    {
+      name: 'Student_' + "#{i}", email: 's000000' + "#{i}" \
+      + '@student.rmit.edu.au', s_number: 's000000' + "#{i}", gender: 'x'
+    }
+  )
+
+  Tutor.create(
+    [
+      {
+        rating: 3.0, user_id: "#{i}"
+      }
+    ]
+  ) unless i < 10
+
+  Student.create(
+    [
+      {
+        rating: 3.0, user_id: "#{i}"
+      }
+    ]
   )
 end
