@@ -6,8 +6,10 @@ class TutorsController < ApplicationController
     def show
       @tutor = Tutor.find(params[:id])
       @user = User.find(@tutor.user_id)
-      @both = @tutor.merge(@user)
-      render json: @both
+      respond_to do |format|
+        format.json  { render :json => {:user => @user,
+                                      :tutor => @tutor }}
+      end
     end
 
     def create
