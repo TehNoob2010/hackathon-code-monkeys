@@ -5,5 +5,8 @@ Rails.application.routes.draw do
         resources :courses
         resources :students
         resources :tutors
+        get '/tutors/:id/update_rate/:rating', to: 'tutors#update_rate'
     end
+    
+    
 end

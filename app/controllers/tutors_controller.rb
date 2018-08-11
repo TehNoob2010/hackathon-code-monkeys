@@ -1,33 +1,39 @@
 class TutorsController < ApplicationController
     def index
-      @tutor = Tutor.all
-      render json: @tutor
+      tutor = Tutor.all
+      render json: tutor
     end
 
-    def show
-      tutor = Tutor.find(params[:id])
-      user = User.find(tutor.user_id)
-      render :json => {:user => user, :tutor => tutor }
+    def show   
+        tutor = Tutor.find(params[:id])
+        user = User.find(tutor.user_id)
+        
+        
+        render :json => {:user => user, :tutor => tutor }
     end
+    
+    
+    def update_rate
+            #if params[:update_rate].present? 
+            tutor = Tutor.find(params[:id])
+            rating = rate(params[:rating].to_f, params[:id])
+            t_count = tutor.rating_count + 1
+            Tutor.update(tutor.id, :rating => rating, :rating_count => t_count)
+    end
+    
 
     def create
-        @user = User.find(params[:user_id])
-        @tutor = Tutor.create({user_id: @user.id, rating: 3.5, rating_count: 1})
+        user = User.find(params[:user_id])
+        tutor = Tutor.create({user_id: @user.id, rating: 3.5, rating_count: 1})
     end
-    def rate(rating)
-        @tutor = Tutor.find params[:id]
-        @tutor.rating = ((@tutor.rating * @tutor.rating_count) + rating ) / (@tutor.rating_count + 1)
-        @tutor.rating_count = @tutor.rating_count + 1
-    end
-
-
-    def mergejson(*args)
-      merged = {}
-      args.each do |a|
-        merged.merge!(a.is_a?(Hash) ? a : a.first)
-        # or use .deep_merge! if the hashes can contain nested hashes
-      end
-      return merged
+    
+    
+    private
+    def rate(new_rate, id)
+        t_rating = Tutor.find(id).rating
+        t_count =  Tutor.find(id).rating_count
+        rating = ((t_rating * t_count) + new_rate) / (t_count + 1)
+        rating
     end
 
 end
