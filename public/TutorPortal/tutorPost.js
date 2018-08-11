@@ -9,7 +9,6 @@ $('#ready').click(()=>{
         $('#contentWrapper').append(popUp);
     });
 });
-<<<<<<< HEAD
 
 function hide() {
     var div = document.getElementyById('buttonB');
@@ -19,7 +18,6 @@ function hide() {
 $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
   })
-=======
 $('#accept').click(()=>{
     $.get('/api/acceptReq?req='+reqID+'&userID='+userID);
 });
@@ -27,4 +25,3 @@ $('#accept').click(()=>{
 $('#decline').click(()=>{
     $('#reqPopup').remove();
 });
->>>>>>> a61be7fe6e3cca29e877a0cb20f54eb3ce34d7ca
