@@ -37,7 +37,6 @@ class TutorsController < ApplicationController
             render :json => {:done => "true"}
     end
 
-
     private
       def rate(new_rate, id)
           t_rating = Tutor.find(id).rating

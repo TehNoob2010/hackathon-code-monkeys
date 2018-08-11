@@ -10,12 +10,13 @@ Rails.application.routes.draw do
 
         post '/user', to: 'users#create'
         post '/tutor', to: 'tutors#create'
+        post '/student', to: 'students#create'
 
         scope '/tutors/:id' do
             get '/rate', to: 'tutors#update_rate'
         end
 
-        scope '/student/:id' do
+        scope '/students/:id' do
             get '/rate', to: 'students#update_rate'
         end
 

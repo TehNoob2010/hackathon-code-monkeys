@@ -7,7 +7,7 @@ for i in 1..20 do
       {
         name: 'Student_' + "#{i}", email: 's000000' + "#{i}" \
         + '@student.rmit.edu.au', s_number: 's000000' + "#{i}", gender: 'x', \
-        skype_user: "skype" + "#{i}",
+        skype_user: "skype " + "#{name}",
       }
     ]
   )
@@ -16,7 +16,7 @@ for i in 1..20 do
     [
       {
         rating: default_rating, rating_count: 1, user_id: "#{i}", \
-          linkedin_ID: "linked" + "#{i}"
+          linkedin_ID: "linkedin " + "#{i}"
       }
     ]
   ) if i < 11
@@ -24,7 +24,7 @@ for i in 1..20 do
   Student.create(
     [
       {
-        rating: default_rating, rating_count: 1, user_id: "#{i}",
+        rating: default_rating, rating_count: 1, user_id: "#{i}"
       }
     ]
   )
@@ -49,6 +49,15 @@ Course.create(
     },
     {
       name: "math", score: 44, rating: 3.5, rating_count: 1, tutor_id: 4
+    },
+    {
+      name: "physics", score: 88, rating: 3.5, rating_count: 1, tutor_id: 6
+    },
+    {
+      name: "physics", score: 98, rating: 3.5, rating_count: 1, tutor_id: 8
+    },
+    {
+      name: "physics", score: 68, rating: 3.5, rating_count: 1, tutor_id: 7
     }
   ]
 )
