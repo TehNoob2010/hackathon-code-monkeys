@@ -2,7 +2,7 @@ class TutorsController < ApplicationController
 
     def create
         @user = User.find(params[:user_id])
-        @tutor = Tutor.create({user_id: @user.id, rating: 3.5})
+        @tutor = Tutor.create({user_id: @user.id, rating: 3.5, rating_count: 1})
     end
 
     def rate(rating)
