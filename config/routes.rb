@@ -16,8 +16,8 @@ Rails.application.routes.draw do
             get '/rate', to: 'student#update_rate'
         end
 
-        # queryParams must contain ?course_name=""&student_id=""
-        get '/start_session', to: 'chat_sessions#create'
+        # queryParams must contain ?course_name=""&student_id=""&description=""
+        post '/start_session', to: 'chat_sessions#create'
 
     end
 
