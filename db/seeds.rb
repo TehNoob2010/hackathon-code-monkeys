@@ -31,7 +31,10 @@ end
 Course.create(
   [
     {
-      id: 0, name: "history", score: 22, rating: 3.5, rating_count: 1, tutor_id: 1
+      name: "history", score: 22, rating: 3.5, rating_count: 1, tutor_id: 1
+    },
+    {
+      name: "history", score: 55, rating: 3.5, rating_count: 1, tutor_id: 2
     }
   ]
 )
