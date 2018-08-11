@@ -10,13 +10,13 @@ User.create(
       skype_user: "",
     },
     {
-      name: 'Abir',
+      name: 'Stephan',
       email: 's3677701@student.rmit.edu.au',
       s_number: 's3677701', gender: 'male',
       skype_user: ""
     },
     {
-      name: 'Stephan',
+      name: 'Abir',
       email: 's@student.rmit.edu.au',
       s_number: 's', gender: 'male',
       skype_user: ""
