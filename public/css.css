@@ -187,3 +187,34 @@ button:hover span:after {
    transform: rotate(360deg);
  }
 }
+
+@keyframes engine {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(369deg);
+    }
+  }
+
+  .modal-content{
+      padding: 80px ;
+  }
+
+  .btn-primary{
+    border-radius: 70%;
+    padding: 100px 90px;
+   animation: engine 1s ease-in;
+    background-color: limegreen;
+    margin: 0 auto;
+    text-align: center;
+    margin-right: 50%;
+}
+
+#exampleModalLabel{
+    text-align: center;
+}
+
+.modal-body{
+    text-align: center;
+}
