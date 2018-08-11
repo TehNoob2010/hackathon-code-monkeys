@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-for i in 0..20 do
+for i in 1..20 do
   User.create(
-    { name: 'Student_' + "#{i}", email: 's0000000@student.rmit.edu.au', s_number: 's0000000', gender: 'x' }
+    { name: 'Student_' + "#{i}", email: 's000000' + "#{i}" \
+      + '@student.rmit.edu.au', s_number: 's000000' + "#{i}", gender: 'x' }
   )
 end
